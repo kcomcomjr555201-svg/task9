@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 5 - Counter</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%); padding: 30px; backdrop-filter: blur(10px); }
+        .card-title { font-size: 24px; margin-bottom: 12px; color: #000; }
+        .card-text { margin-bottom: 20px; line-height: 1.6; color: #000; }
+        .d-flex { display: flex; }
+        .justify-content-between { justify-content: space-between; }
+        .justify-content-center { justify-content: center; }
+        .gap-3 { gap: 20px; }
+        .mb-4 { margin-bottom: 25px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; color: #000; font-weight: bold; }
+        .btn-primary { background-color: #00ff00; color: #000; }
+        .btn-secondary { background-color: #ff0000; color: #000; }
+        .btn-danger { background-color: #ff0000; color: #000; }
+        .btn-success { background-color: #00ff00; color: #000; }
+        
+        body {
+            background: linear-gradient(135deg, #ff0000 0%, #ffff00 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .coin-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f59e0b;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .counter-btn {
+            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Level 5: Counter</h5>
+                        <p class="card-text">Let's create a coin counter! Click the buttons to add or remove coins.</p>
+                        
+                        <div class="coin-counter">
+                            🪙 <span id="coinCount">0</span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <button class="btn btn-danger counter-btn" onclick="decreaseCoins()">-</button>
+                            <button class="btn btn-success counter-btn" onclick="increaseCoins()">+</button>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-secondary" onclick="location.href='level4.html'">Back</button>
+                            <button class="btn btn-primary" onclick="location.href='level6.html'">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let coins = 0;
+        
+        function increaseCoins() {
+            coins++;
+            updateDisplay();
+        }
+        
+        function decreaseCoins() {
+            if (coins > 0) {
+                coins--;
+                updateDisplay();
+            }
+        }
+        
+        function updateDisplay() {
+            document.getElementById('coinCount').textContent = coins;
+        }
+    </script>
+</body>
+</html>
