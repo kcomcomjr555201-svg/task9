@@ -3,53 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=level1.html">
-    <title>Web Dev Mini-Quest</title>
+    <title>Level 1 - HTML + Bootstrap</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: linear-gradient(135deg, #ff0000 0%, #ffff00 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-        }
-        .message {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            text-align: center;
-        }
-        h1 {
-            color: #000;
-            margin-bottom: 15px;
-        }
-        p {
-            color: #000;
-            font-size: 18px;
-        }
-        a {
-            color: #000;
-            font-weight: bold;
-            text-decoration: underline;
-        }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #ff0000 0%, #ffff00 100%); padding: 40px 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 24px; backdrop-filter: blur(10px); }
+        .card-title { font-size: 24px; font-weight: bold; margin-bottom: 12px; color: #000; }
+        .card-text { color: #000; margin-bottom: 20px; line-height: 1.6; }
+        .d-flex { display: flex; }
+        .justify-content-between { justify-content: space-between; }
+        .btn { padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; color: #000; font-weight: bold; }
+        .btn-primary { background-color: #00ff00; color: #000; }
+        .btn-primary:hover { background-color: #00cc00; }
+        .btn-secondary { background-color: #ff0000; color: #000; }
+        .btn-secondary:disabled { opacity: 0.5; cursor: not-allowed; }
     </style>
 </head>
 <body>
-    <div class="message">
-        <h1>🎮 Web Dev Mini-Quest</h1>
-        <p>Redirecting to Level 1...</p>
-        <p style="margin-top: 15px;">If you're not redirected, <a href="level1.html">click here</a>.</p>
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Level 1: HTML + Bootstrap</h5>
+            <p class="card-text">Welcome to the Web Dev Mini-Quest! You've successfully created your first HTML page with Bootstrap. This is just the beginning of your journey.</p>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" disabled>Back</button>
+                <button class="btn btn-primary" onclick="location.href='level2.html'">Next</button>
+            </div>
+        </div>
     </div>
-    
-    <script>
-        // Backup JavaScript redirect in case meta refresh doesn't work
-        setTimeout(function() {
-            window.location.href = 'level1.html';
-        }, 100);
-    </script>
 </body>
 </html>
