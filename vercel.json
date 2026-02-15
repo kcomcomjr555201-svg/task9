@@ -1,5 +1,44 @@
 {
-    "rewrites" : [
-        {"source" : "/(.*)", "destination": "/Task9.html" }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/level1",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/level2",
+      "dest": "/level2.html"
+    },
+    {
+      "src": "/level3",
+      "dest": "/level3.html"
+    },
+    {
+      "src": "/level4",
+      "dest": "/level4.html"
+    },
+    {
+      "src": "/level5",
+      "dest": "/level5.html"
+    },
+    {
+      "src": "/level6",
+      "dest": "/level6.html"
+    },
+    {
+      "src": "/task9",
+      "dest": "/task9.html"
+    }
+  ],
+  "cleanUrls": true
 }
